@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<evenements>
+    <!-- //TODO LES DIFFERENTES FACTIONS :
+    <!DOCTYPE attributs [
+        <!ENTITY cap "CAPITALISTE">
+        <!ENTITY com "COMMUNISTES">
+        <!ENTITY lib "LIBEREAUX">
+        <!ENTITY rel "RELIGIEUX">
+        <!ENTITY mil "MILITARISTE">
+        <!ENTITY eco "ECOLOGISTE">
+        <!ENTITY nat "NATIONALISTE">
+        <!ENTITY loy "LOYALISTE">
+
+        <!ENTITY rep "REPUBLIQUE">
+
+        <!ENTITY sat "satisfaction">
+        <!ENTITY par "partisans">
+        <!ENTITY tre "tresor">
+        <!ENTITY nou "nourriture">
+        <!ENTITY ind "industrie">
+        <!ENTITY agr "agriculture">
+        ]>
+//TODO : ATTRIBUTS :
+satisfaction = pourcentage de satisfaction d'une faction
+partisans = nombre de partisans qui va bouger dans une faction
+tresor = argent a changer
+nourriture = fait varier la nourriture
+industrie = gagne ou perd en industrie
+agriculture = gagne ou perd en agriculture
+
+-->
+    <hiver nombreEvenement="5">
+        <evenement id="1" idEvenement="1">
+            <question>Des monstres géants approchent le royaume... Que faites-vous ?</question>
+            <reponse idReponse="1" nomFaction="MILITARISTE" attribut="satisfaction" effet="20" nomFaction2="RELIGIEUX" attribut2="satisfaction" effet2="-20">J'envoie toute la force militaire du pays pour les éradiquer</reponse>
+            <reponse idReponse="2" nomFaction="ECOLOGISTE" attribut="partisans" effet="-30" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="10">Je mets en place une défense basée sur des canons</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="partisans" effet="30" nomFaction2="LIBEREAUX" attribut2="satisfaction" effet2="-10">Je prend du temps pour réfléchir à une stratégie même si c'est risqué</reponse>
+            <reponse idReponse="4" nomFaction="MILITARISTE" attribut="partisans" effet="-100" nomFaction2="ECOLOGISTE" attribut2="partisans" effet2="-100">Je laisse ces créatures béantes se délecter de mes adorables villageois</reponse>
+        </evenement>
+        <evenement id="2" idEvenement="2">
+            <question>Des monstres décident de s'attaquer à l'agriculture à l'avant du Royaume...</question>
+            <reponse idReponse="1" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="20" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="20">J'élabore une stratégie pour combattre</reponse>
+            <reponse idReponse="2" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="-20" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="-30">Je laisse tomber en me disant que j'ai d'autres champs et réserves de provisions</reponse>
+            <reponse idReponse="3" nomFaction="MILITARISTE" attribut="partisans" effet="-20" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="-10">Je fonce combattre tête baissée</reponse>
+        </evenement>
+        <evenement id="3" idEvenement="3">
+            <question>Les militaires proposent de nourrir les chevaux afin qu'ils soient plus performants pour leur prochaine course</question>
+            <reponse idReponse="1" nomFaction="REPUBLIQUE" attribut="AGRICULTURE" effet="-10" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="40">Nourrissons ces braves bêtes !</reponse>
+            <reponse idReponse="2" nomFaction="REPUBLIQUE" attribut="AGRICULTURE" effet="20" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="-40">Quoi ? Laissez mon agriculture tranquille !</reponse>
+            <reponse idReponse="3" nomFaction="REPUBLIQUE" attribut="AGRICULTURE" effet="10" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="-10">Refuser gentillement</reponse>
+            <reponse idReponse="4" nomFaction="REPUBLIQUE" attribut="AGRICULTURE" effet="10" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="-5">Patienter en esperant qu"ils oublient de redemander</reponse>
+        </evenement>
+        <evenement id="4" idEvenement="4">
+            <question>Un titan apparaît au loin, d'apparence plutôt poilue, et se met à jeter des pierres sur les murs...</question>
+            <reponse idReponse="1" nomFaction="REPUBLIQUE" attribut="industrie" effet="20" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="-100">Renforcer les murs avec des matières plus résistantes</reponse>
+            <reponse idReponse="2" nomFaction="CAPITALISTE" attribut="satisfaction" effet="-20" nomFaction2="LIBEREAUX" attribut2="satisfaction" effet2="10">Riposter et envoyer le Caporal Rivaille au front!</reponse>
+            <reponse idReponse="3" nomFaction="CAPITALISTE" attribut="partisans" effet="-5" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="15">Ignorer ce titan</reponse>
+        </evenement>
+        <evenement id="5" idEvenement="5">
+            <question>Vous découvrez qu'il existe des titans intelligents contrôlés par des humains</question>
+            <reponse idReponse="1" nomFaction="COMMUNISTES" attribut="satisfaction" effet="12" nomFaction2="RELIGIEUX" attribut2="satisfaction" effet2="-10">J'ordonne aux scientifiques d'entamer de nouvelles recherches</reponse>
+            <reponse idReponse="2" nomFaction="CAPITALISTE" attribut="satisfaction" effet="-12" nomFaction2="RELIGIEUX" attribut2="satisfaction" effet2="-20">J'examine la carcasse du titan pour essayer de découvrir des informations</reponse>
+            <reponse idReponse="3" nomFaction="CAPITALISTE" attribut="satisfaction" effet="-100" nomFaction2="RELIGIEUX" attribut2="satisfaction" effet2="-100">Je déraille, deviens fou et me met à crier comme si j'étais en train de me transformer en titan</reponse>
+        </evenement>
+    </hiver>
+
+    <ete nombreEvenement="5">
+        <evenement id="6" idEvenement="1">
+            <question>Une canicule s'abat sur le royaume</question>
+            <reponse idReponse="1" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="-15" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="100">En profiter pour vendre des climatisations à tout le monde</reponse>
+            <reponse idReponse="2" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="-5" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="10">Réductions sur les ventilateurs</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="satisfaction" effet="20" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="-15">Distribuer de l'eau</reponse>
+        </evenement>
+        <evenement id="7" idEvenement="2">
+            <question>Les vacances arrivent</question>
+            <reponse idReponse="1" nomFaction="REPUBLIQUE" attribut="tresor" effet="-50" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="50">Profiter des vacances pour s'occuper du peuple</reponse>
+            <reponse idReponse="2" nomFaction="CAPITALISTE" attribut="satisfaction" effet="7" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="150">Vous faites créer une plage payante</reponse>
+            <reponse idReponse="3" nomFaction="ECOLOGISTE" attribut="partisans" effet="-10" nomFaction2="LOYALISTE" attribut2="partisans" effet2="15">Vous fermez l'industrie</reponse>
+        </evenement>
+        <evenement id="8" idEvenement="3">
+            <question>Une tornade approche dans quelques jours qui est capable de détruire les murs! Que faire ?</question>
+            <reponse idReponse="1" nomFaction="RELIGIEUX" attribut="satisfaction" effet="10" nomFaction2="REPUBLIQUE" attribut2="industrie" effet2="10">Je solidifie les murs et me prépare en créant un abri</reponse>
+            <reponse idReponse="2" nomFaction="CAPITALISTE" attribut="partisans" effet="-15" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="20">Advienne que pourra...</reponse>
+            <reponse idReponse="3" nomFaction="ECOLOGISTE" attribut="partisans" effet="-10" nomFaction2="LOYALISTE" attribut2="partisans" effet2="15">Vous fermez l'industrie</reponse>
+        </evenement>
+        <evenement id="9" idEvenement="4">
+            <question>Un mystérieux titan, doté d'une cuirasse imposante a enfoncé le mur Maria</question>
+            <reponse idReponse="1" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-10" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="-10">Appeler le bataillon d'exploration pour tuer les titans</reponse>
+            <reponse idReponse="2" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-10" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="10">Appeler les brigades spéciales pour tuer les titans</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="satisfaction" effet="40" nomFaction2="MILITARISTE" attribut2="satisfaction" effet2="-10">Laisser les religieux faire leurs prières</reponse>
+        </evenement>
+        <evenement id="10" idEvenement="5">
+            <question>Le capitaine Magath propose de rassembler nos ressources pour bâtir un mur de protection contre les titans</question>
+            <reponse idReponse="1" nomFaction="COMMUNISTES" attribut="satisfaction" effet="20" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="-20">J'accepte !</reponse>
+            <reponse idReponse="2" nomFaction="COMMUNISTES" attribut="satisfaction" effet="-20" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="20">Je refuse !</reponse>
+        </evenement>
+    </ete>
+
+    <automne nombreEvenement="5">
+        <evenement id="11" idEvenement="1">
+            <question>L’Organisation des Caraïbes-Unies souhaite que vous accueillez des réfugiés climatiques suite aux récentes inondations dans la région</question>
+            <reponse idReponse="1" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-15" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="15">Décliner poliment au motif que vous n’avez pas les infrastructures pour eux</reponse>
+            <reponse idReponse="2" nomFaction="RELIGIEUX" attribut="satisfaction" effet="15" nomFaction2="LIBEREAUX" attribut2="satisfaction" effet2="-30">Décliner au motif qu’ils ne sont pas du même culte que vous</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="satisfaction" effet="10" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="-10">Accepter sans condition</reponse>
+            <reponse idReponse="4" nomFaction="NATIONALISTE" attribut="partisans" effet="-20" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="200">Accepter sous condition d’aide financière de la part de l’OCU</reponse>
+        </evenement>
+        <evenement id="12" idEvenement="2">
+            <question>Un valeureux soldat du nom de Rivaille se propose d'aller combattre des ennemies...</question>
+            <reponse idReponse="1" nomFaction="MILITARISTE" attribut="satisfaction" effet="-30" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="20">Je le laisse aller défendre ma patrie, celle d'El Presidente, dans le risque que Rivaille décède</reponse>
+            <reponse idReponse="2" nomFaction="MILITARISTE" attribut="satisfaction" effet="20" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="10">J'empèche Rivaille d'aller combattre tout seul</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="satisfaction" effet="10" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="-15">Lui fournir quelques armes pour qu'il se défende</reponse>
+            <reponse idReponse="4" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-20" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="-200">Lui mettre une armée à disposition</reponse>
+        </evenement>
+        <evenement id="13" idEvenement="3">
+            <question>Le bataillon d'exploration vous propose de s'aventurer hors des murs afin d'en savoir d'avantage sur les titans</question>
+            <reponse idReponse="1" nomFaction="MILITARISTE" attribut="satisfaction" effet="20" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="20">J'accepte avec hargne</reponse>
+            <reponse idReponse="2" nomFaction="MILITARISTE" attribut="satisfaction" effet="-10" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="15">Je joue la carte de la vigilance</reponse>
+            <reponse idReponse="3" nomFaction="RELIGIEUX" attribut="satisfaction" effet="10" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="-10">Envoyer les soldats au casse pipe</reponse>
+            <reponse idReponse="4" nomFaction="NATIONALISTE" attribut="satisfaction" effet="-20" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="200">Vous accompagnez vous troupes à l'exérieur</reponse>
+        </evenement>
+        <evenement id="14" idEvenement="4">
+            <question>Eren Yeager se propose de se transformer en titan pour reboucher le trou du mur Maria avec une grosse pierre</question>
+            <reponse idReponse="1" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-10" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="10">Accepter</reponse>
+            <reponse idReponse="2" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-10" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="20">Accepter et ordonner au Bataillon d'exploration de l'accompagner</reponse>
+            <reponse idReponse="3" nomFaction="MILITARISTE" attribut="satisfaction" effet="-10" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="-10">Refuser</reponse>
+        </evenement>
+        <evenement id="15" idEvenement="5">
+            <question>Rivaille, Caporal en chef de l'escouade, vous demande si les équipements tridimensionnels peuvent être renouvelés</question>
+            <reponse idReponse="1" nomFaction="REPUBLIQUE" attribut="industrie" effet="-15" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="-30">Renouvelons les !</reponse>
+            <reponse idReponse="2" nomFaction="LOYALISTE" attribut="satisfaction" effet="-10" nomFaction2="REPUBLIQUE" attribut2="satisfaction" effet2="10">Négatif.</reponse>
+        </evenement>
+    </automne>
+
+    <printemps nombreEvenement="5">
+        <evenement id="16" idEvenement="1">
+            <question>Le commandant Pixis propose d'utiliser 20$ de notre trésorerie pour améliorer et adapter l'armement de nos militaires</question>
+            <reponse idReponse="1" nomFaction="MILITARISTE" attribut="satisfaction" effet="30" nomFaction2="REPUBLIQUE" attribut2="tresor" effet2="-20">J'accepte !</reponse>
+            <reponse idReponse="2" nomFaction="MILITARISTE" attribut="satisfaction" effet="-30" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="-10">Je refuse !</reponse>
+        </evenement>
+        <evenement id="17" idEvenement="2">
+            <question>Des monstres géants approchent le royaume... Que faites-vous ?</question>
+            <reponse idReponse="1" nomFaction="MILITARISTE" attribut="satisfaction" effet="20" nomFaction2="RELIGIEUX" attribut2="satisfaction" effet2="-20">J'envoie toute la force militaire du pays pour les éradiquer</reponse>
+            <reponse idReponse="2" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="-20" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="10">Je mets en place une défense basée sur des canons</reponse>
+            <reponse idReponse="3" nomFaction="MILITARISTE" attribut="partisans" effet="-100" nomFaction2="ECOLOGISTE" attribut2="partisans" effet2="-100">Je laisse ces créatures béantes se délecter d'une partie de mes adorables villageois</reponse>
+        </evenement>
+        <evenement id="18" idEvenement="3">
+            <question>Les titans ont attaqué Shiganshina ! Que faire ?</question>
+            <reponse idReponse="1" nomFaction="RELIGIEUX" attribut="satisfaction" effet="-20" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="-10">Ouvrir la porte aux rescapés et risquer l'intrusion de titans dans le mur Maria</reponse>
+            <reponse idReponse="2" nomFaction="RELIGIEUX" attribut="satisfaction" effet="20" nomFaction2="LOYALISTE" attribut2="satisfaction" effet2="10">Laisser les rescapés déceder face aux titans</reponse>
+            <reponse idReponse="3" nomFaction="MILITARISTE" attribut="satisfaction" effet="-10" nomFaction2="NATIONALISTE" attribut2="satisfaction" effet2="20">Envoyer les brigades spéciales au front pour essayer de sauver de potentiels survivants</reponse>
+        </evenement>
+        <evenement id="19" idEvenement="4">
+            <question>Le Maréchal Steiss propose de distribuer des vivres issus de notre agriculture au peuple</question>
+            <reponse idReponse="1" nomFaction="COMMUNISTES" attribut="satisfaction" effet="20" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="-40">"Distribuer sans rochigner</reponse>
+            <reponse idReponse="2" nomFaction="COMMUNISTES" attribut="satisfaction" effet="-20" nomFaction2="CAPITALISTE" attribut2="satisfaction" effet2="20">Refuser</reponse>
+        </evenement>
+        <evenement id="20" idEvenement="5">
+            <question>Partisan écologiste, Soldat Frock, propose de réduire un peu notre travail industriel pour préserver l'agriculture</question>
+            <reponse idReponse="1" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="30" nomFaction2="REPUBLIQUE" attribut2="agriculture" effet2="10">Accepter</reponse>
+            <reponse idReponse="2" nomFaction="ECOLOGISTE" attribut="satisfaction" effet="-30" nomFaction2="REPUBLIQUE" attribut2="industrie" effet2="20">Refuser</reponse>
+        </evenement>
+    </printemps>
+</evenements>
+        <!--
+                <evenement idEvenement="1">
+                    <question></question>
+                    <reponse1 idReponse="1" action="1" attribut="1" effet="1" action2="1" attribut2="1" effet2="1">1</reponse1>
+                    <reponse3 idReponse="2" action="1" attribut="1" effet="1" action2="1" attribut2="1" effet2="1">2</reponse3>
+                    <reponse3 idReponse="3" action="1" attribut="1" effet="1" action2="1" attribut2="1" effet2="1">3</reponse3>
+                    <reponse4 idReponse="4" action="1" attribut="1" effet="1" action2="1" attribut2="1" effet2="1">4</reponse4>
+                </evenement>
+        -->
